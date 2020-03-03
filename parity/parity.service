@@ -1,0 +1,14 @@
+[Unit]
+Description=Parity Server
+After=network.target
+
+[Service]
+User=rcaldas
+WorkingDirectory=/var/rcaldas/parity
+ExecStart=/usr/bin/parity --config al.toml
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=parity
+
+[Install]
+WantedBy=multi-user.target

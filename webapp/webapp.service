@@ -1,0 +1,14 @@
+[Unit]
+Description=NodeJS Web App Blockchain
+After=network.target
+
+[Service]
+User=rcaldas
+WorkingDirectory=/var/rcaldas/webapp
+ExecStart=/usr/bin/npm start
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=webapp
+
+[Install]
+WantedBy=multi-user.target
